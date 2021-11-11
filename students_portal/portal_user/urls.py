@@ -1,7 +1,7 @@
 from django.urls import path
 from .views import CreateStudentAPI, StudentListAPI, MarkListAPI, \
                    StudentDetailsUpdateAPI, DeleteStudentAPI, CreateMarksAPI, \
-                   MarkDetailsUpdateAPI, DeleteMarkListAPI
+                   MarkDetailsUpdateAPI, DeleteMarkListAPI, CreateTeacherAPI
 
 
 app_name = "portal_user"
@@ -20,5 +20,7 @@ urlpatterns = [
     path('update_marks/<id>/', MarkDetailsUpdateAPI.as_view(),
          name='update-marks'),
     path('delete_marklist/<id>/', DeleteMarkListAPI.as_view(),
-         name='delete-marks')
+         name='delete-marks'),
+    # Teacher urls
+    path('add_teacher/', CreateTeacherAPI.as_view(), name="create-teacher")
 ]

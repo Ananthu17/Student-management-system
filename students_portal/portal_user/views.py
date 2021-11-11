@@ -4,7 +4,8 @@ from rest_framework.generics import (ListAPIView,
                                      UpdateAPIView)
 from rest_framework.response import Response
 from .models import Student, MarkList
-from .serializers import StudentSerializer, MarkSerializer
+from .serializers import StudentSerializer, MarkSerializer, \
+                         TeacherSerializer
 from django.db.models import Q
 
 
@@ -137,3 +138,20 @@ class DeleteMarkListAPI(DestroyAPIView):
         self.perform_destroy(instance)
         return Response({"status": 200, "data": {},
                          "message": "Mark list deleted"})
+
+
+# Create Teacher
+class CreateTeacherAPI(CreateAPIView):
+    queryset = Student.objects.all()
+    serializer_class = TeacherSerializer
+    permission_classes = (AllowAny,)
+
+    def create(self, request):
+        serializer = self.get_serializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response({"status": 200, "data": serializer.data,
+                             "message": "Teacher record added successfully"})
+        else:
+            return Response({"status": 400, "errors": serializer.errors,
+                             "message": "Invalid input data"})

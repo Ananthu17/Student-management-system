@@ -482,6 +482,13 @@
     }
 },
 {
+    "model": "portal_user.teacher",
+    "pk": 3,
+    "fields": {
+        "name": "Mandana"
+    }
+},
+{
     "model": "portal_user.marklist",
     "pk": 1,
     "fields": {

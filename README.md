@@ -1,6 +1,5 @@
-portal_user/migrations/
 
-# Fingent_task (Student Management System)
+# Student Management System
   Rest Apis Using DRF framework to manage students and their marks in each term examinations.
   # Code
     views.py and serializers.py contain api handling functions
@@ -16,7 +15,7 @@ portal_user/migrations/
    # To start project:
        ./manage.py createsuperuser
        ./manage.py runserver
-       NB: Add a record in "Teacher" table using Django Admin Panel before testing api's with postman.
+
    # To use Db Dump:
         ./manage.py loaddata data_dump.json
             admin user: ananthu
