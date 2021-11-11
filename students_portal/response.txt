@@ -1,0 +1,212 @@
+1. Create student
+    URL = http://127.0.0.1:8000/user_portal/add_students/
+    METHOD = POST
+    BODY = {
+        "name": "Mini",
+        "age": 20,
+        "gender": "F",
+        "reporting_teacher": 1
+    }
+    RESPONSE = {
+        "status": 200,
+        "data": {
+            "id": 3,
+            "name": "Mini",
+            "age": 20,
+            "gender": "F",
+            "reporting_teacher": {
+                "name": "Suchithra"
+            }
+        },
+        "message": "Student record created"
+    }
+
+2. List Students
+    URL = http://127.0.0.1:8000/user_portal/students_list/
+    METHOD = GET
+    RESPONSE = {
+        "status": 200,
+        "data": [
+            {
+                "id": 1,
+                "name": "Cheenu",
+                "age": 20,
+                "gender": "M",
+                "reporting_teacher": {
+                    "name": "Suchithra"
+                }
+            },
+            {
+                "id": 2,
+                "name": "Ananthu",
+                "age": 20,
+                "gender": "M",
+                "reporting_teacher": {
+                    "name": "Suchithra"
+                }
+            },
+            {
+                "id": 3,
+                "name": "Mini",
+                "age": 20,
+                "gender": "F",
+                "reporting_teacher": {
+                    "name": "Suchithra"
+                }
+            }
+        ],
+        "message": "Student list"
+    }
+
+3. Update Students
+    URL = http://127.0.0.1:8000/user_portal/students_list/
+    METHOD = PUT
+    BODY = {
+            "name": "Mini",
+            "age": 25,
+            "gender": "F",
+            "reporting_teacher": 1
+        }
+    RESPONSE = {
+        "status": 200,
+        "data": {
+            "id": 3,
+            "name": "Mini",
+            "age": 20,
+            "gender": "F",
+            "reporting_teacher": {
+                "name": "Suchithra"
+            }
+        },
+        "message": "Student record updated"
+    }
+
+4. Delete Students
+    URL = http://127.0.0.1:8000/user_portal/delete_student/4/
+    METHOD = DELETE
+    RESPONSE = {
+        "status": 200,
+        "data": {},
+        "message": "Student record deleted"
+    }
+
+5. Create Marks
+    URL = http://127.0.0.1:8000/user_portal/add_marks/
+    METHOD = POST
+    BODY = {
+        "student": 2,
+        "term": "One",
+        "maths": 50,
+        "science": 50,
+        "history": 47
+    }
+    RESPONSE = {
+        "status": 200,
+        "data": {
+            "id": 4,
+            "student": {
+                "name": "Ananthu"
+            },
+            "term": "One",
+            "maths": 50,
+            "science": 50,
+            "history": 47,
+            "total_marks": 147,
+            "created_time": "2021-11-11T15:00:57.959739Z"
+        },
+        "message": "Mark list generated"
+    }
+
+6. List Marks
+    URL = http://127.0.0.1:8000/user_portal/marks_list/
+    METHOD = GET
+    RESPONSE = {
+    "status": 200,
+    "data": [
+            {
+                "id": 1,
+                "student": {
+                    "name": "Cheenu"
+                },
+                "term": "Two",
+                "maths": 20,
+                "science": 50,
+                "history": 47,
+                "total_marks": 117,
+                "created_time": "Nov 11, 2021, 2:59 pm"
+            },
+            {
+                "id": 2,
+                "student": {
+                    "name": "Cheenu"
+                },
+                "term": "One",
+                "maths": 30,
+                "science": 50,
+                "history": 47,
+                "total_marks": 127,
+                "created_time": "Nov 11, 2021, 2:59 pm"
+            },
+            {
+                "id": 3,
+                "student": {
+                    "name": "Ananthu"
+                },
+                "term": "Two",
+                "maths": 30,
+                "science": 50,
+                "history": 47,
+                "total_marks": 127,
+                "created_time": "Nov 11, 2021, 3:00 pm"
+            },
+            {
+                "id": 4,
+                "student": {
+                    "name": "Ananthu"
+                },
+                "term": "One",
+                "maths": 50,
+                "science": 50,
+                "history": 47,
+                "total_marks": 147,
+                "created_time": "Nov 11, 2021, 3:00 pm"
+            }
+        ],
+        "message": "Mark list"
+    }
+
+7. Update Marks
+    URL = http://127.0.0.1:8000/user_portal/update_marks/1/
+    METHOD = PUT
+    BODY = {
+        "student": 2,
+        "term": "One",
+        "maths": 40,
+        "science": 20,
+        "history": 47
+    }
+    RESPONSE = {
+    "status": 200,
+    "data": {
+        "id": 1,
+        "student": {
+            "name": "Akshara"
+        },
+        "term": "One",
+        "maths": 40,
+        "science": 20,
+        "history": 47,
+        "total_marks": 107,
+        "created_time": "2021-11-11T14:01:01.033967Z"
+    },
+    "message": "Mark list updated"
+}
+
+8. Delete Marks
+    URL = http://127.0.0.1:8000/user_portal/delete_marklist/4/
+    METHOD = DELETE
+    RESPONSE = {
+        "status": 200,
+        "data": {},
+        "message": "Mark list deleted"
+    }
