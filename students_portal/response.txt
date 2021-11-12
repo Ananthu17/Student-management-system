@@ -210,3 +210,14 @@
         "data": {},
         "message": "Mark list deleted"
     }
+
+9. Add teachers
+    URL = http://127.0.0.1:8000/user_portal/add_teacher/
+    METHOD = POST
+    BODY = {
+        "name":"Mandana"
+    }
+    RESPONSE = {
+        "id": 1,
+        "name":"Mandana"
+    }

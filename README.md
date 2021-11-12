@@ -26,6 +26,7 @@
 
    # CSV Upload
         students.csv in root holder contains students records.
+        Nb: Create 2 teacher records before csv upload.
 
    # To upload CSV to database:
      ./manage.py csv_upload < path to the csv file >
