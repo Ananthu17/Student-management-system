@@ -23,3 +23,9 @@
 
    # Sample Response and Urls:
         response.txt file in root holder contains sample response and information about urls.
+
+   # CSV Upload
+        students.csv in root holder contains students records.
+
+   # To upload CSV to database:
+     ./manage.py csv_upload < path to the csv file >
